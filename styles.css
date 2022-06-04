@@ -36,3 +36,13 @@ main {
 
   width: 50%;
 }
+.negative {
+  color: red;
+}
+.positive {
+  color: green;
+}
+#value {
+  font-size: 40px;
+  font-weight: bold;
+}
