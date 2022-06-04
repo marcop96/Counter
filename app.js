@@ -8,38 +8,22 @@ const $btndecrease = document.querySelector(".btn-decrease");
 $btnincrease.addEventListener("click", function () {
   number = number + 1;
   Number(($numberspan.innerText = number));
-  if (number == 0) {
-    $numberspan.classList.remove("positive", "negative");
-  }
-  if (number < 0) {
-    $numberspan.classList.remove("positive");
-    $numberspan.classList.add("negative");
-  }
-  if (number > 0) {
-    $numberspan.classList.add("positive");
-    $numberspan.classList.remove("negative");
-  }
+  colorNumber(number);
 });
 
 $btndecrease.addEventListener("click", function () {
   number = number - 1;
   $numberspan.innerText = number;
-  if (number == 0) {
-    $numberspan.classList.remove("positive", "negative");
-  }
-  if (number < 0) {
-    $numberspan.classList.remove("positive");
-    $numberspan.classList.add("negative");
-  }
-  if (number > 0) {
-    $numberspan.classList.add("positive");
-    $numberspan.classList.remove("negative");
-  }
+  colorNumber(number);
 });
 
 $btnreset.addEventListener("click", function () {
   number = 0;
   $numberspan.innerText = 0;
+  colorNumber(number);
+});
+
+function colorNumber(number) {
   if (number == 0) {
     $numberspan.classList.remove("positive", "negative");
   }
@@ -51,4 +35,4 @@ $btnreset.addEventListener("click", function () {
     $numberspan.classList.add("positive");
     $numberspan.classList.remove("negative");
   }
-});
+}
